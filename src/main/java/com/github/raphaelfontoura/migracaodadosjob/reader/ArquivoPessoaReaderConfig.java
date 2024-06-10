@@ -6,6 +6,7 @@ import org.springframework.batch.item.file.FlatFileItemReader;
 import org.springframework.batch.item.file.builder.FlatFileItemReaderBuilder;
 import org.springframework.batch.item.file.mapping.FieldSetMapper;
 import org.springframework.batch.item.file.transform.FieldSet;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.validation.BindException;
@@ -15,6 +16,7 @@ import com.github.raphaelfontoura.migracaodadosjob.dominio.Pessoa;
 @Configuration
 public class ArquivoPessoaReaderConfig {
 
+  @Bean
   public FlatFileItemReader<Pessoa> arquivoPessoaReader() {
     return new FlatFileItemReaderBuilder<Pessoa>()
         .name("arquivoPessoaReader")
